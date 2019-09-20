@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QuickOTP Demo</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        .otp-container {
+            display: inline-block;
+            padding: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d35400;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="quickotp.css">
+</head>
+<body>
+
+    <div class="otp-container">
+        <p>We have sent an OTP to your mobile number +91-909*******</p>
+        <div id="otp-holder"></div>
+        <button onclick="getOtp()" style="margin-top:50px">Get OTP code</button>
+    </div>
+    <script src="quickotp.js"></script>
+    <script>
+
+        let q = new QuickOTP("#otp-holder", {
+            otpLength : 6,
+            boxSize : "50px",
+            boxColor : "#8e44ad",
+            fontSize : "27px"
+        }).render();
+        
+        
+        function getOtp() {
+            alert( q.getOtp() );
+        }
+
+        
+    </script>
+</body>
+</html>
