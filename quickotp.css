@@ -20,3 +20,12 @@
     position: relative;
     /* color: #d35400; */
 }
+
+.otp-inputs .input[type="number"]::-webkit-outer-spin-button, .otp-inputs .input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+.otp-inputs .input[type="number"] {
+    -moz-appearance: textfield;
+}
