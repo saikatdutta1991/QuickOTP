@@ -18,6 +18,7 @@
             transform: translate(-50%, -50%);
             color: #d35400;
             text-align: center;
+            width: 100%;
         }
         button {
             background: #d35400;
@@ -26,6 +27,7 @@
             padding: 15px;
             font-size: 15px;
         }
+
     </style>
     <link rel="stylesheet" href="quickotp.css">
 </head>
@@ -40,10 +42,12 @@
     <script>
 
         let q = new QuickOTP("#otp-holder", {
-            otpLength : 6,
-            boxSize : "50px",
+            otpLength : 4,
+            boxSize : "40px",
             boxColor : "#d35400",
-            fontSize : "27px"
+            fontSize : "27px",
+            inputType : "number",
+            letters : ""
         }).render();
         
         

@@ -16,7 +16,9 @@
             otpLength : 4,
             boxSize : "40px",
             boxColor : "#d35400",
-            fontSize : "27px"
+            fontSize : "27px",
+            inputType : "number",
+            letters : "", //uppercase, lowercase, mixed
         }, config); // assign default config with new config
 
         this.holderelemid = holderelemid;
@@ -56,7 +58,7 @@
     keyupHandler(event) {
         
         // if input key is backspace, then move to previous input
-        if(event.code == "Backspace") {
+        if(event.keyCode == 8 || event.keyCode == 229) {
             let corder = parseInt(event.target.getAttribute("order")); // current input order
 
             // find next input order and focus
@@ -68,6 +70,7 @@
 
         // if any value entered, then move to next input
         else if(event.target.value !== "") {
+
             let corder = parseInt(event.target.getAttribute("order")); // current input order
 
             if(corder < this.getInputElements().length) {
@@ -103,12 +106,13 @@
         for(let i = 1; i <= this.config.otpLength; i++) {
             contentArray.push(`<input 
                 class="input" 
-                type="text" order="${i}" 
+                type="${this.config.inputType}" order="${i}" 
                 style="border-color : ${this.config.boxColor}; 
                     color : ${this.config.boxColor};
                     width : ${this.config.boxSize};
                     height : ${this.config.boxSize};
-                    font-size : ${this.config.fontSize};">`
+                    font-size : ${this.config.fontSize};
+                    text-transform:${this.config.letters}">`
             );
         }
 
