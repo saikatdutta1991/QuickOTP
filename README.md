@@ -1,6 +1,6 @@
 
 # QuickOTP
-*This javascript plugin helps to render otp input for any project.*
+*This javascript plugin helps to render otp input for any project. [Click here for demo](https://saikatdutta1991.github.io/QuickOTP/)*
 
 ## Screen Shot
 
